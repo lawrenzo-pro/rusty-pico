@@ -1,0 +1,11 @@
+#! /bin/bash
+
+mkdir $1
+cd $1
+cp -ar ../pico-template/* .
+mkdir .cargo
+cp -r ../pico-template/.cargo/* ./.cargo/
+echo -e "[package] \nname = \"$1\"  \nversion = \"0.1.0\" " >> Cargo.tmp
+cat Cargo.toml >> Cargo.tmp
+rm Cargo.toml
+mv Cargo.tmp Cargo.toml

@@ -50,11 +50,11 @@ fn main() -> ! {
         sio.gpio_bank0,
         &mut pac.RESETS,
     );
-    let mut led_pin = pins.gpio13.into_push_pull_output();
+    let mut led_pin = pins.gpio9.into_push_pull_output();
     loop {
         led_pin.set_high().unwrap();
-        delay.delay_ms(500);
+        delay.delay_ms(1000);
         led_pin.set_low().unwrap();
-        delay.delay_ms(500);
+        delay.delay_ms(1000);
     }
 }
