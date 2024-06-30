@@ -7,10 +7,9 @@ extern crate rp2040_hal;
 
 use panic_halt as _;
 use rp2040_hal as hal;
-use hal::pac::{self, usbctrl_regs::buff_status};
+use hal::{pac,Sio,clocks,watchdog::Watchdog};
 
-use embedded_hal::{digital::v2::{OutputPin,InputPin}, watchdog};
-use rp2040_hal::clocks::Clock;
+use embedded_hal::digital::v2::{OutputPin,InputPin};
 
 //Link the bootloader
 #[link_section = ".boot2"]
